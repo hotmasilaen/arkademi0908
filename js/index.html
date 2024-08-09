@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #total-bayar {
+            font-size: large;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="data-peserta"></p>
+    <p id="total-bayar"></p>
+    <div id="result"></div>
+
+    <!-- <div class="container">
+        <p>No HP</p>
+        <input id="inputField" type="text" />
+        <button id="checkPswd">Check Password</button>
+        <p id="message"></p>
+    </div> -->
+
+    <div class="container">
+        <p>No HP</p>
+        <input id="inputField" type="text" />
+        <button id="submit">Submit</button>
+        <p id="message"></p>
+    </div>
+    <br />
+    <div class="container">
+        <p>Hitung persen</p>
+        <input id="persen" type="number" />
+        <button id="submit-persen">Submit</button>
+        <p id="message-persen"></p>
+    </div>
+    <br />
+    <p id="hari"></p>
+    <script>
+        // const nama = "Farhan";
+        // const Nama = "Tuti";
+
+        const nama = "Tuti";
+        let alamat = "Jakarta";
+        alamat = "lampung";
+        var noHp = "0983627263";
+
+        console.log("Alamat " + nama + ": " + alamat);
+        // alert("Alamat " + nama + ": " + alamat);
+
+        document.getElementById("data-peserta").innerHTML = "Alamat " + nama + ": " + alamat
+
+        const hargaTas = 150000;
+        const hargaSepatu = 50000;
+        if (typeof hargaSepatu === "number" && typeof hargaTas === "number") {
+            const totalBayar = hargaTas + hargaSepatu;
+            document.getElementById("total-bayar").innerHTML = "Total bayar: " + totalBayar;
+        } else {
+            alert("Tipe data tidak number.")
+        }
+
+        const number1 = 10;
+        const number2 = 12;
+        const number3 = 20;
+
+        const hasilPenjumlahan = number1 + number2;
+        const hasilPerkalian = number2 * number3;
+        const hasilPengurangan = number3 - number1;
+        const hasilBagi = number3 / number1;
+        const sisaBagi = number2 % number1;
+
+        document.getElementById("result").innerHTML = "Penjumlahan: " + hasilPenjumlahan + " " + "Perkalian: " + hasilPerkalian + " " + "Pengurangan: " + hasilPengurangan + " " + "Bagi: " + hasilBagi + " " + "sisa bagi: " + sisaBagi
+
+        let inputField = document.getElementById("inputField");
+        // let checkPswd = document.getElementById("checkPswd");
+        let submitBtn = document.getElementById("submit");
+
+        // checkPswd.addEventListener("click", function () {
+        //     const existPswd = 12345
+
+        //     if (inputField.value.length > 13) {
+        //         document.getElementById("message").innerHTML = "Masukkan no HP maksimal 13 karakter."
+        //     } else {
+        //         if (inputField.value !== existPswd) {
+        //             document.getElementById("message").innerHTML = "Password salah."
+        //         } else {
+        //             document.getElementById("message").innerHTML = "Password benar."
+        //         }
+        //     }
+        // })
+
+        submitBtn.addEventListener('click', function () {
+            const noHp = inputField.value;
+            document.getElementById("message").innerHTML = noHp.replace("08", "+628")
+        })
+
+        var day = "Kamis";
+        switch (day) {
+            case "Senin":
+                console.log("Hari ini adalah hari Senin");
+                document.getElementById("hari").innerHTML = "Hari ini adalah hari Senin";
+                break;
+            case 2:
+                console.log("Hari ini adalah hari Selasa");
+                document.getElementById("hari").innerHTML = "Hari ini adalah hari Selasa";
+                break;
+            case 3:
+                console.log("Hari ini adalah hari Rabu");
+                document.getElementById("hari").innerHTML = "Hari ini adalah hari Rabu";
+                break;
+            default:
+                console.log("Hari ini adalah hari Libur");
+                document.getElementById("hari").innerHTML = "Hari ini adalah hari Libur";
+                break;
+        }
+
+        var fruits = ["Tuti", 12, "Wati", "Nia"];
+        var sortedFruits = fruits.sort();
+
+        // document.write("<p>" + sortedFruits[0] + "</p>");
+        // document.write("<p>" + sortedFruits[1] + "</p>");
+        // document.write("<p>" + sortedFruits[2] + "</p>");
+        // document.write("<p>" + sortedFruits[3] + "</p>");
+        // document.write("<p>" + sortedFruits[4] + "</p>");
+
+        for (var i in sortedFruits) {
+            document.write("<p>" + sortedFruits[i] + "</p>");
+        }
+
+        for (var i = 1; i <= 5; i++) {
+            document.write("<p>" + "Nomor: " + i + "</p>");
+        }
+
+        let dataSiswa = {
+            nama: "Nia",
+            alamat: "Jakarta",
+            hobby: "Membaca"
+        }
+
+        dataSiswa.alamat = "Lampung";
+        delete dataSiswa.hobby
+
+        // document.write("<p>" + "Nama Siswa: " + dataSiswa.nama + "</p>");
+        // document.write("<p>" + "Alamat Siswa: " + dataSiswa.alamat + "</p>");
+
+        for (var i in dataSiswa) {
+            document.write("<p>" + "Data Siswa: " + dataSiswa[i] + "</p>");
+        }
+
+        function hitungPersen(val) {
+            let result = val / 100;
+            return result
+        }
+
+        let inputPersen = document.getElementById("persen");
+        // let checkPswd = document.getElementById("checkPswd");
+        let submitPersen = document.getElementById("submit-persen");
+
+        submitPersen.addEventListener("click", function () {
+            document.getElementById("message-persen").innerHTML = "Hasil persen: " + hitungPersen(inputPersen.value);
+        })
+        // checkPswd.addEventListener("click", function () {
+        //     const existPswd = 12345
+
+        //     if (inputField.value.length > 13) {
+        //         document.getElementById("message").innerHTML = "Masukkan no HP maksimal 13 karakter."
+        //     } else {
+        //         if (inputField.value !== existPswd) {
+        //             document.getElementById("message").innerHTML = "Password salah."
+        //         } else {
+        //             document.getElementById("message").innerHTML = "Password benar."
+        //         }
+        //     }
+        // })
+
+
+    </script>
+</body>
+
+</html>
