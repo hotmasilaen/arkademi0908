@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            background-color: yellow;
+            width: fit-content;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            let x = document.forms["myForm"]["fname"].value;
+            if (x == "") {
+                alert("Nama tidak boleh kosong.");
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Alamat</th>
+                <th>No HP</th>
+                <th>Jurusan</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Lenny</td>
+                <td>Jakarta</td>
+                <td>08327736273</td>
+                <td>Teknik Komputer</td>
+            </tr>
+            <tr>
+                <td>Lenny</td>
+                <td>Jakarta</td>
+                <td>08327736273</td>
+                <td>Teknik Komputer</td>
+            </tr>
+            <tr>
+                <td>Lenny</td>
+                <td>Jakarta</td>
+                <td>08327736273</td>
+                <td>Teknik Komputer</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <!-- <h1>Hari ini belajar HTML</h1> -->
+
+    <!-- Heading -->
+    <b>ini elemen 1</b><br />
+    <b>ini elemen 2</b><br />
+    <p>HTML <br />best practices</p>
+
+    <mark>Bermitra dengan lembaga pemerintah sebagai penyedia layanan pelatihan kartu prakerja untuk menciptakan
+        angkatan
+        kerja Indonesia yang siap kerja.</mark>
+    <br /><br />
+    <p>Bermitra dengan lembaga pemerintah sebagai penyedia layanan pelatihan kartu prakerja untuk menciptakan
+        angkatan
+        kerja Indonesia yang siap kerja.</p>
+
+    <br />
+    <!-- <h1>Hari ini belajar HTML</h1>
+<a href="https://prakerja.arkademi.com/">Prakerja</a>
+<b>tulisan ini bold</b>
+<img
+    src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2022/01/104228210.jpg?auto=format&q=60&fit=max&w=930" />
+<img src="./images.jpg" alt="gambar-animasi" /> -->
+    <form name="myForm" onsubmit="return validateForm()">
+        Name:<input type="text" name="fname" />
+        <input type="submit" value="Submit" />
+    </form>
+    <p></p>
+</body>
+
+</html>
